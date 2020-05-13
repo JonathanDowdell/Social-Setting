@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		24117DF5243041E500CE269E /* UICollection+Etx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24117DF4243041E500CE269E /* UICollection+Etx.swift */; };
+		241F0BB7246B957100D939E8 /* RSKPlaceholderTextView in Frameworks */ = {isa = PBXBuildFile; productRef = 241F0BB6246B957100D939E8 /* RSKPlaceholderTextView */; };
 		2445E49F23EE43F80091885E /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445E49E23EE43F80091885E /* String+Ext.swift */; };
 		2445E4A223EE49C70091885E /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445E4A123EE49C70091885E /* ProfileVC.swift */; };
 		2445E4A623EE666F0091885E /* MomentCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445E4A523EE666F0091885E /* MomentCollection.swift */; };
@@ -93,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				241F0BB7246B957100D939E8 /* RSKPlaceholderTextView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +299,7 @@
 			);
 			name = "Social Setting";
 			packageProductDependencies = (
+				241F0BB6246B957100D939E8 /* RSKPlaceholderTextView */,
 			);
 			productName = "Social Setting";
 			productReference = 244DEF4B23D0173500B15606 /* Social Setting.app */;
@@ -327,6 +330,7 @@
 			);
 			mainGroup = 244DEF4223D0173500B15606;
 			packageReferences = (
+				241F0BB5246B957100D939E8 /* XCRemoteSwiftPackageReference "RSKPlaceholderTextView" */,
 			);
 			productRefGroup = 244DEF4C23D0173500B15606 /* Products */;
 			projectDirPath = "";
@@ -578,6 +582,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		241F0BB5246B957100D939E8 /* XCRemoteSwiftPackageReference "RSKPlaceholderTextView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ruslanskorb/RSKPlaceholderTextView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		241F0BB6246B957100D939E8 /* RSKPlaceholderTextView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 241F0BB5246B957100D939E8 /* XCRemoteSwiftPackageReference "RSKPlaceholderTextView" */;
+			productName = RSKPlaceholderTextView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 244DEF4323D0173500B15606 /* Project object */;
 }
