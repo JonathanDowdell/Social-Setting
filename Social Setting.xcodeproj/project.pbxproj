@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		240464472463DF770051C441 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 240464462463DF770051C441 /* SDWebImage */; };
 		24117DF5243041E500CE269E /* UICollection+Etx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24117DF4243041E500CE269E /* UICollection+Etx.swift */; };
 		2445E49F23EE43F80091885E /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445E49E23EE43F80091885E /* String+Ext.swift */; };
 		2445E4A223EE49C70091885E /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2445E4A123EE49C70091885E /* ProfileVC.swift */; };
@@ -27,7 +26,6 @@
 		246736FE23EE76690027F6B3 /* ProfileInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246736FD23EE76690027F6B3 /* ProfileInfoCell.swift */; };
 		248F9F2723D02B6D00994275 /* DefaultStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248F9F2623D02B6D00994275 /* DefaultStyles.swift */; };
 		248F9F2B23D0312F00994275 /* SSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248F9F2A23D0312F00994275 /* SSTextField.swift */; };
-		24AC6EAF245E557B00D28791 /* RSKPlaceholderTextView in Frameworks */ = {isa = PBXBuildFile; productRef = 24AC6EAE245E557B00D28791 /* RSKPlaceholderTextView */; };
 		24BE893F23EBC57600F773F4 /* SSTitleLabel+Etx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BE893E23EBC57600F773F4 /* SSTitleLabel+Etx.swift */; };
 		24C6150B23D2B22100AA5CA9 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C6150A23D2B22100AA5CA9 /* FeedVC.swift */; };
 		24C6151123D2B5CA00AA5CA9 /* UIVIew+Etx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C6151023D2B5CA00AA5CA9 /* UIVIew+Etx.swift */; };
@@ -95,8 +93,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				240464472463DF770051C441 /* SDWebImage in Frameworks */,
-				24AC6EAF245E557B00D28791 /* RSKPlaceholderTextView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,8 +297,6 @@
 			);
 			name = "Social Setting";
 			packageProductDependencies = (
-				24AC6EAE245E557B00D28791 /* RSKPlaceholderTextView */,
-				240464462463DF770051C441 /* SDWebImage */,
 			);
 			productName = "Social Setting";
 			productReference = 244DEF4B23D0173500B15606 /* Social Setting.app */;
@@ -333,8 +327,6 @@
 			);
 			mainGroup = 244DEF4223D0173500B15606;
 			packageReferences = (
-				24AC6EAD245E557B00D28791 /* XCRemoteSwiftPackageReference "RSKPlaceholderTextView" */,
-				240464452463DF770051C441 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 244DEF4C23D0173500B15606 /* Products */;
 			projectDirPath = "";
@@ -586,38 +578,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		240464452463DF770051C441 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.7.4;
-			};
-		};
-		24AC6EAD245E557B00D28791 /* XCRemoteSwiftPackageReference "RSKPlaceholderTextView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ruslanskorb/RSKPlaceholderTextView.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.3;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		240464462463DF770051C441 /* SDWebImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 240464452463DF770051C441 /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImage;
-		};
-		24AC6EAE245E557B00D28791 /* RSKPlaceholderTextView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 24AC6EAD245E557B00D28791 /* XCRemoteSwiftPackageReference "RSKPlaceholderTextView" */;
-			productName = RSKPlaceholderTextView;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 244DEF4323D0173500B15606 /* Project object */;
 }
