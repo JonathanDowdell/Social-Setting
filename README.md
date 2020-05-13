@@ -37,7 +37,7 @@ A Social Network. Built from Swift. 👨🏾‍💻
 
 ## Contact Me (Jonathan)
 
-* [@twittboxJJ Twitter](https://twitter.com/twittboxJJ)
+* [@twittboxJJ Twitter](https://twitter.com/johnnyy_swift)
 
 * [johnnyy.swift Instagram](https://www.instagram.com/johnnyy.swift/)
 
