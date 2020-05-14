@@ -80,7 +80,6 @@ extension ProfileVC {
             let size = CGSize(width: appoxWidth, height: 1000)
             let atti = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16)]
             let estimatedFrame = NSString(string: data).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: atti, context: nil)
-            print(estimatedFrame.height + 180)
             return estimatedFrame.height + 180
         }
     }

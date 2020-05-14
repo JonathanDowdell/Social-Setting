@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SignUpVC: UIViewController {
     
@@ -15,12 +16,15 @@ class SignUpVC: UIViewController {
     private let firstNameTextField = SSTextField(inset: UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15), placeholder: "First Name")
     private let lastNameTextField = SSTextField(inset: UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15), placeholder: "Last Name")
     private let emailTextField = SSTextField(inset: UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15), placeholder: "Email")
+    private let usernameTextField = SSTextField(inset: UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15), placeholder: "Username")
     private let passwordTextField = SSTextField(inset: UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15), placeholder: "Password", isSecure: true)
     private let pwdConfirmTextField = SSTextField(inset: UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15), placeholder: "Confirm Password", isSecure: true)
     private let continueButton = SSButton(backgroundColor: DefaultStyles.Colors.SSBaseColor, title: "Continue")
     private let termsButton = SSButton(backgroundColor: .clear, title: "Continue")
     private lazy var mainStack = SSUIStackView(arrangedSubviews: [
-        facebookButton, spacingText, firstNameTextField, lastNameTextField, emailTextField, passwordTextField, pwdConfirmTextField, continueButton, termsButton], axis: .vertical)
+        facebookButton, spacingText, emailTextField, usernameTextField, passwordTextField, pwdConfirmTextField, continueButton, termsButton], axis: .vertical)
+//    private lazy var mainStack = SSUIStackView(arrangedSubviews: [
+//    facebookButton, spacingText, firstNameTextField, lastNameTextField, emailTextField, passwordTextField, pwdConfirmTextField, continueButton, termsButton], axis: .vertical)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +45,10 @@ class SignUpVC: UIViewController {
     
     private func configureTextFields() {
         textFieldDelegates()
+        emailTextField.autocapitalizationType = .none
+        usernameTextField.autocapitalizationType = .none
+        passwordTextField.autocapitalizationType = .none
+        pwdConfirmTextField.autocapitalizationType = .none
         mainStack.spacing = 10
         view.addSubview(mainStack)
         NSLayoutConstraint.activate([
@@ -50,6 +58,7 @@ class SignUpVC: UIViewController {
             firstNameTextField.heightAnchor.constraint(equalToConstant: 44),
             lastNameTextField.heightAnchor.constraint(equalToConstant: 44),
             emailTextField.heightAnchor.constraint(equalToConstant: 44),
+            usernameTextField.heightAnchor.constraint(equalToConstant: 44),
             firstNameTextField.heightAnchor.constraint(equalToConstant: 44),
             passwordTextField.heightAnchor.constraint(equalToConstant: 44),
             pwdConfirmTextField.heightAnchor.constraint(equalToConstant: 44)
@@ -85,10 +94,25 @@ class SignUpVC: UIViewController {
         termsButton.setAttributedTitle(termText, for: .normal)
         termsButton.titleLabel?.numberOfLines = 0
         termsButton.titleLabel?.textAlignment = .center
+        
+        continueButton.addTarget(self, action: #selector(continueSignUp), for: .touchUpInside)
     }
     
     @objc private func continueSignUp() {
-        
+        guard let username = usernameTextField.text else { return }
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        Network.shared.userService.signUpUser(email: email, username: username, password: password) { (result) in
+            switch result {
+            case .success(let user):
+                let sceneDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
+                sceneDelegate.switchTo(vc: .verified)
+                break
+            case .failure(let error as NSError):
+                print(error.localizedDescription)
+                break
+            }
+        }
     }
 }
 
@@ -98,6 +122,7 @@ extension SignUpVC: UITextFieldDelegate {
         firstNameTextField.delegate = self
         lastNameTextField.delegate = self
         emailTextField.delegate = self
+        usernameTextField.delegate = self
         passwordTextField.delegate = self
         pwdConfirmTextField.delegate = self
     }
