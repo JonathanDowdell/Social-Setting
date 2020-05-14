@@ -25,6 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = SplashView()
         window?.backgroundColor = .tertiarySystemBackground
         window?.makeKeyAndVisible()
+        verifyUser()
     }
     
     func verifyUser() {
@@ -47,6 +48,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navAppearance.setBackgroundImage(UIImage(), for: .default)
         navAppearance.isTranslucent = false
         navAppearance.tintColor = DefaultStyles.Colors.SSBaseColor
+    }
+    
+    func switchTo(user:User?) {
+        if let user = user {
+            window?.rootViewController = createTabController(user: user)
+        } else {
+            window?.rootViewController = createLoginRegister()
+        }
     }
     
     func switchTo(user:User?) {
