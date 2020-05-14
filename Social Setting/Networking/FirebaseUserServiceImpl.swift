@@ -14,7 +14,6 @@ class FirebaseUserServiceImpl: UserService {
     func signInUser(email: String, password: String, completion: @escaping (Result<User, Error>) -> ()) {
         Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
             if let _error = error as NSError? {
-                print(_error.localizedDescription)
                 completion(.failure(_error))
                 return
             }

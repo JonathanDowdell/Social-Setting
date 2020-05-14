@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIView {
-    func animateOut(completed: @escaping () -> Void) {
+    func animateOut(completed: (() -> Void)? = nil) {
         let overlayView = UIView()
         overlayView.translatesAutoresizingMaskIntoConstraints = false
         overlayView.backgroundColor = .tertiarySystemBackground
@@ -22,12 +22,32 @@ extension UIView {
             overlayView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
         
-        UIView.animate(withDuration: 0.3) {
-        }
         UIView.animate(withDuration: 0.3, animations: {
             overlayView.alpha = 1
         }) { (_) in
-            completed()
+            guard let _completion = completed else { return }
+            _completion()
+        }
+    }
+    
+    func animateIn(completed: (() -> Void)? = nil) {
+        let overlayView = UIView()
+        overlayView.translatesAutoresizingMaskIntoConstraints = false
+        overlayView.backgroundColor = .tertiarySystemBackground
+        overlayView.alpha = 1
+        self.addSubview(overlayView)
+        NSLayoutConstraint.activate([
+            overlayView.widthAnchor.constraint(equalTo: self.widthAnchor),
+            overlayView.heightAnchor.constraint(equalTo: self.heightAnchor),
+            overlayView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            overlayView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+        ])
+        
+        UIView.animate(withDuration: 0.6, animations: {
+            overlayView.alpha = 0
+        }) { (_) in
+            guard let _completion = completed else { return }
+            _completion()
         }
     }
 }

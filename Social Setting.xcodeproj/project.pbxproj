@@ -63,6 +63,7 @@
 		24D5917623D9606D005FCE37 /* PostBodyStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D5917523D9606C005FCE37 /* PostBodyStack.swift */; };
 		24D5917823D960E3005FCE37 /* UIStackView+Etx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D5917723D960E3005FCE37 /* UIStackView+Etx.swift */; };
 		24D5917A23D963F6005FCE37 /* PostActionStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D5917923D963F6005FCE37 /* PostActionStack.swift */; };
+		24DD2C2D246CF93400833CF3 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DD2C2C246CF93400833CF3 /* SplashView.swift */; };
 		24EDFA8E23D1088F00F307FE /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EDFA8D23D1088F00F307FE /* SignUpVC.swift */; };
 		24F49D1123D0C039006D4AD0 /* UIDevice+Etx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F49D1023D0C039006D4AD0 /* UIDevice+Etx.swift */; };
 		24F49D1323D0C476006D4AD0 /* SSUIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F49D1223D0C476006D4AD0 /* SSUIStackView.swift */; };
@@ -131,6 +132,7 @@
 		24D5917523D9606C005FCE37 /* PostBodyStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostBodyStack.swift; sourceTree = "<group>"; };
 		24D5917723D960E3005FCE37 /* UIStackView+Etx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Etx.swift"; sourceTree = "<group>"; };
 		24D5917923D963F6005FCE37 /* PostActionStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostActionStack.swift; sourceTree = "<group>"; };
+		24DD2C2C246CF93400833CF3 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		24EDFA8D23D1088F00F307FE /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		24F49D1023D0C039006D4AD0 /* UIDevice+Etx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Etx.swift"; sourceTree = "<group>"; };
 		24F49D1223D0C476006D4AD0 /* SSUIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSUIStackView.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				24C6150A23D2B22100AA5CA9 /* FeedVC.swift */,
 				245D383023E8D54F003F8C74 /* FriendsVC.swift */,
 				2445E4A123EE49C70091885E /* ProfileVC.swift */,
+				24DD2C2C246CF93400833CF3 /* SplashView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 				24117DF5243041E500CE269E /* UICollection+Etx.swift in Sources */,
 				24F49D1123D0C039006D4AD0 /* UIDevice+Etx.swift in Sources */,
 				246736FC23EE739E0027F6B3 /* StatLabel.swift in Sources */,
+				24DD2C2D246CF93400833CF3 /* SplashView.swift in Sources */,
 				243DF752246C59A600FEDD4A /* FirebaseUserServiceImpl.swift in Sources */,
 				24C6151323D2C17F00AA5CA9 /* UIImageView+Etc.swift in Sources */,
 				24C6152423D2D1C400AA5CA9 /* SSAvatarImageButton.swift in Sources */,

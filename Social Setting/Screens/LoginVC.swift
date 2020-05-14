@@ -28,6 +28,7 @@ class LoginVC: UIViewController {
         configureSubTitleLabel()
         configureTextFields()
         configureButtons()
+        self.view.animateIn()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,10 +39,14 @@ class LoginVC: UIViewController {
     @objc private func loginUser() {
         guard let email = loginTextField.text else { return }
         guard let password = passwordTextField.text else { return }
-        Network.shared.userService.signInUser(email: email, password: password) { (user) in
-            self.view.animateOut {
+        Network.shared.userService.signInUser(email: email, password: password) { (results) in
+            switch results {
+            case .success(let user):
                 let sceneDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
-                sceneDelegate.switchTo(vc: .verified)
+                self.view.animateOut()
+                sceneDelegate.switchTo(user: user)
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }

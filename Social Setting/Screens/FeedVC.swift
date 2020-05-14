@@ -13,12 +13,15 @@ class FeedVC: UITableViewController {
     private var startingFrame:CGRect?
     private let searchController = UISearchController()
     private var whatsNewHeight: CGFloat = 82
+    private var shown = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
         configureNav()
+        self.view.animateIn()
     }
+    
     
 }
 

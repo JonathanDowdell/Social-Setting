@@ -106,7 +106,7 @@ class SignUpVC: UIViewController {
             switch result {
             case .success(let user):
                 let sceneDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
-                sceneDelegate.switchTo(vc: .verified)
+                sceneDelegate.switchTo(user: user)
                 break
             case .failure(let error as NSError):
                 print(error.localizedDescription)

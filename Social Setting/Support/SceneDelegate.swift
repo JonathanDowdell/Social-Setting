@@ -22,13 +22,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         defaults()
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = UIViewController()
+        window?.rootViewController = SplashView()
         window?.backgroundColor = .tertiarySystemBackground
         window?.makeKeyAndVisible()
-        verifyUser()
     }
     
-    fileprivate func verifyUser() {
+    func verifyUser() {
         Network.shared.userService.checkStatus { (results) in
             switch results {
             case .success(let user):
@@ -50,14 +49,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navAppearance.tintColor = DefaultStyles.Colors.SSBaseColor
     }
     
-    func switchTo(vc: VC) {
-        if vc == .loginRegister {
-            window?.rootViewController = createLoginRegister()
-        } else {
-            window?.rootViewController = createTabController()
-        }
-    }
-    
     func switchTo(user:User?) {
         if let user = user {
             window?.rootViewController = createTabController(user: user)
@@ -76,7 +67,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         tabController.tabBar.tintColor = DefaultStyles.Colors.SSBaseColor
         tabController.viewControllers = [
             createMainFeedVC(),
-//            createFriendsVC(),
             createMessageVC(),
             createActivityVC(),
             createProfileVC()
