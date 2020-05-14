@@ -58,14 +58,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
     }
     
-    func switchTo(user:User?) {
-        if let user = user {
-            window?.rootViewController = createTabController(user: user)
-        } else {
-            window?.rootViewController = createLoginRegister()
-        }
-    }
-    
     func createLoginRegister() -> UINavigationController {
         let nav = UINavigationController(rootViewController: LoginVC())
         return nav
