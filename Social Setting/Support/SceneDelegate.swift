@@ -22,9 +22,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         defaults()
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = createTabController()
+        window?.rootViewController = UIViewController()
         window?.backgroundColor = .tertiarySystemBackground
         window?.makeKeyAndVisible()
+        verifyUser()
+    }
+    
+    fileprivate func verifyUser() {
+        Network.shared.userService.checkStatus { (results) in
+            switch results {
+            case .success(let user):
+                self.switchTo(user: user)
+                break
+            case .failure(_):
+                self.switchTo(user: nil)
+                break
+            }
+        }
     }
     
     fileprivate func defaults() {
@@ -33,7 +47,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navAppearance.shadowImage = UIImage()
         navAppearance.setBackgroundImage(UIImage(), for: .default)
         navAppearance.isTranslucent = false
-        
         navAppearance.tintColor = DefaultStyles.Colors.SSBaseColor
     }
     
@@ -45,12 +58,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
     }
     
+    func switchTo(user:User?) {
+        if let user = user {
+            window?.rootViewController = createTabController(user: user)
+        } else {
+            window?.rootViewController = createLoginRegister()
+        }
+    }
+    
     func createLoginRegister() -> UINavigationController {
         let nav = UINavigationController(rootViewController: LoginVC())
         return nav
     }
     
-    func createTabController() -> UITabBarController {
+    func createTabController(user: User? = nil) -> UITabBarController {
         let tabController = UITabBarController()
         tabController.tabBar.tintColor = DefaultStyles.Colors.SSBaseColor
         tabController.viewControllers = [

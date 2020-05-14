@@ -36,9 +36,13 @@ class LoginVC: UIViewController {
     }
     
     @objc private func loginUser() {
-        view.animateOut {
-            let sceneDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
-            sceneDelegate.switchTo(vc: .verified)
+        guard let email = loginTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        Network.shared.userService.signInUser(email: email, password: password) { (user) in
+            self.view.animateOut {
+                let sceneDelegate = self.view.window?.windowScene?.delegate as! SceneDelegate
+                sceneDelegate.switchTo(vc: .verified)
+            }
         }
     }
     
@@ -53,6 +57,8 @@ class LoginVC: UIViewController {
     
     private func configureTitleLabel() {
         titleLabel.text = "Welcome\nto Social Setting"
+        loginTextField.autocapitalizationType = .none
+        passwordTextField.autocapitalizationType = .none
         titleLabel.numberOfLines = 2
         view.addSubview(titleLabel)
         NSLayoutConstraint.activate([
@@ -75,7 +81,7 @@ class LoginVC: UIViewController {
     }
 
     private func configureTextFields() {
-        loginTextField.placeholder = "Login"
+        loginTextField.placeholder = "Email"
         passwordTextField.placeholder = "Password"
         view.addSubview(textFieldStack)
         NSLayoutConstraint.activate([
