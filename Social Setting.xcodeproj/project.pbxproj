@@ -246,8 +246,8 @@
 				243DF749246C3A8300FEDD4A /* Swift-Bridge.m */,
 				243DF747246C3A4600FEDD4A /* Swift-Header.h */,
 				243DF746246C39FA00FEDD4A /* module.modulemap */,
-				243DF748246C3A8300FEDD4A /* Social Setting-Bridging-Header.h */,
 				24207D59246CF274001688A2 /* GoogleService-Info.plist */,
+				243DF748246C3A8300FEDD4A /* Social Setting-Bridging-Header.h */,
 			);
 			path = "Social Setting";
 			sourceTree = "<group>";
