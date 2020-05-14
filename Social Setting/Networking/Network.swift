@@ -13,6 +13,6 @@ class Network {
     
     private init() {}
     
-    let userService: UserService = FirebaseUserServiceImpl()
+    let userService: UserService = FirebaseUserService()
     
 }

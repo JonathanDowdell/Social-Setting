@@ -25,7 +25,7 @@
 		243DF744246C381400FEDD4A /* GTMSessionFetcher.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 243DF742246C381300FEDD4A /* GTMSessionFetcher.xcframework */; };
 		243DF74A246C3A8300FEDD4A /* Swift-Bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 243DF749246C3A8300FEDD4A /* Swift-Bridge.m */; };
 		243DF74F246C552700FEDD4A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243DF74E246C552700FEDD4A /* UserService.swift */; };
-		243DF752246C59A600FEDD4A /* FirebaseUserServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243DF751246C59A600FEDD4A /* FirebaseUserServiceImpl.swift */; };
+		243DF752246C59A600FEDD4A /* FirebaseUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243DF751246C59A600FEDD4A /* FirebaseUserService.swift */; };
 		243DF754246C5BDB00FEDD4A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243DF753246C5BDB00FEDD4A /* User.swift */; };
 		243DF758246C6ED000FEDD4A /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243DF757246C6ED000FEDD4A /* Network.swift */; };
 		243DF75F246C996600FEDD4A /* AuthNetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243DF75E246C996600FEDD4A /* AuthNetworkingError.swift */; };
@@ -92,7 +92,7 @@
 		243DF748246C3A8300FEDD4A /* Social Setting-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Social Setting-Bridging-Header.h"; sourceTree = "<group>"; };
 		243DF749246C3A8300FEDD4A /* Swift-Bridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Swift-Bridge.m"; sourceTree = "<group>"; };
 		243DF74E246C552700FEDD4A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
-		243DF751246C59A600FEDD4A /* FirebaseUserServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserServiceImpl.swift; sourceTree = "<group>"; };
+		243DF751246C59A600FEDD4A /* FirebaseUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserService.swift; sourceTree = "<group>"; };
 		243DF753246C5BDB00FEDD4A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		243DF757246C6ED000FEDD4A /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		243DF75E246C996600FEDD4A /* AuthNetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNetworkingError.swift; sourceTree = "<group>"; };
@@ -195,8 +195,8 @@
 		243DF750246C593F00FEDD4A /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				243DF751246C59A600FEDD4A /* FirebaseUserServiceImpl.swift */,
 				243DF757246C6ED000FEDD4A /* Network.swift */,
+				243DF751246C59A600FEDD4A /* FirebaseUserService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -517,7 +517,7 @@
 				24F49D1123D0C039006D4AD0 /* UIDevice+Etx.swift in Sources */,
 				246736FC23EE739E0027F6B3 /* StatLabel.swift in Sources */,
 				24DD2C2D246CF93400833CF3 /* SplashView.swift in Sources */,
-				243DF752246C59A600FEDD4A /* FirebaseUserServiceImpl.swift in Sources */,
+				243DF752246C59A600FEDD4A /* FirebaseUserService.swift in Sources */,
 				24C6151323D2C17F00AA5CA9 /* UIImageView+Etc.swift in Sources */,
 				24C6152423D2D1C400AA5CA9 /* SSAvatarImageButton.swift in Sources */,
 				243DF761246C9EC300FEDD4A /* SSErrorProtocol.swift in Sources */,
